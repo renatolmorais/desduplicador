@@ -1,2 +1,2 @@
 # desduplicador
-# a python program to find and manage duplicated files
+A python program to find and manage duplicated files
