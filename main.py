@@ -7,9 +7,6 @@ import analyse
 import process
 import remove
 
-#init_path = 'C:\\Users\\Renato\\iCloudMedia\\Pictures&Videos\\Minhas Fotos'
-#init_path = 'C:\\cygwin64\\home\\Renato\\repos\\pyimages'
-
 result = ''
 
 init_path = sys.argv[1] if len(sys.argv) > 1 else ''

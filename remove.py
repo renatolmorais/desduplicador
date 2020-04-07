@@ -2,15 +2,6 @@
 
 import sys,os
 import json
-
-#hash_list = {}
-
-#filename = sys.argv[1] if len(sys.argv) > 1 else ''
-
-#if filename == '': sys.exit(1)
-
-#with open( filename,'r' ) as fp:
-#	hash_list = json.load(fp)
 	
 def remove(result,remove=False):
 	hash_list = json.loads(result).get("result",{})

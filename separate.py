@@ -4,12 +4,9 @@ import sys,os
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
-
-#img = cv2.imread( imgname, 0 )
+from config import save_path
 
 exts = ['png','PNG','bmp','BMP','jpg','JPG','jpeg','JPEG','jpe','JPEG']
-
-save_path = 'c:\\Users\\Renato\\iCloudMedia\\Pictures&Videos\\Minhas Fotos\\Comprovantes'
 
 path = sys.argv[1] if len(sys.argv) > 1 else ''
 if path == '': sys.exit(1)
