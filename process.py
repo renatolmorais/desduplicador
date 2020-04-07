@@ -3,6 +3,8 @@
 import sys,os
 import json
 
+if not os.path.exists('config.py'): sys.exit(1)
+
 
 def process(result):
 	hash_list = json.loads(result).get("result",{})

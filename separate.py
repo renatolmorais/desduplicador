@@ -4,6 +4,9 @@ import sys,os
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
+
+if not os.path.exists('config.py'): sys.exit(1)
+
 from config import save_path
 
 exts = ['png','PNG','bmp','BMP','jpg','JPG','jpeg','JPEG','jpe','JPEG']

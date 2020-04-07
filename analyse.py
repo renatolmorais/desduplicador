@@ -4,6 +4,8 @@ import sys,os
 import json
 from hashlib import sha256
 
+if not os.path.exists('config.py'): sys.exit(1)
+
 hash_list = {}
 total_count = 0
 

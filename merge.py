@@ -4,6 +4,8 @@ import sys,os
 import json
 from process import process
 
+if not os.path.exists('config.py'): sys.exit(1)
+
 filename1 = sys.argv[1] if len(sys.argv) > 1 else ''
 filename2 = sys.argv[2] if len(sys.argv) > 2 else ''
 

@@ -7,6 +7,8 @@ import analyse
 import process
 import remove
 
+if not os.path.exists('config.py'): sys.exit(1)
+
 result = ''
 
 init_path = sys.argv[1] if len(sys.argv) > 1 else ''

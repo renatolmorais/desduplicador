@@ -4,6 +4,9 @@ import sys,os
 import json
 import requests
 import re
+
+if not os.path.exists('config.py'): sys.exit(1)
+
 import config
 
 ext_list = ['png','jpg','bmp','jpe','jpeg']
