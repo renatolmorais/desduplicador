@@ -4,6 +4,7 @@ import sys,os
 import json
 import requests
 import re
+import config
 
 ext_list = ['png','jpg','bmp','jpe','jpeg']
 
@@ -27,8 +28,8 @@ if extension not in ext_list:
 	sys.exit(4)
 
 files = {'arquivo':open(filename,'rb').read()}
-data = {'token':'a1b2c3d4'}
-url = 'https://tess.renatolmorais.com.br/process2'
+data = {'token':config.token}
+url = config.url
 
 resp = requests.post(
 	url,
