@@ -32,6 +32,7 @@ html_page1 = bs.BeautifulSoup(tjresp1.text.encode('latin1'))
 html_page2 = bs.BeautifulSoup(tjresp2.text.encode('latin1'))
 counter = 1
 while not html_page1.find(text=n_processo) or not html_page2.find(text=n_processo):
+	sys.write('attempts: {0}\r'.format(counter))
 	counter += 1
 	tjresp1 = tjreq.get(tjurl + search_path)
 	tjresp2 = tjreq.get(tjurl + processo_path)
@@ -39,6 +40,8 @@ while not html_page1.find(text=n_processo) or not html_page2.find(text=n_process
 	html_page2 = bs.BeautifulSoup(tjresp2.text.encode('latin1'))
 	#process = html_page.find(text=n_processo)
 	#with open(process + '.html','w') as fp: fp.write( tjresp.text.encode('latin1'))
+	
+print 'founded after {0} attempts!'.format(counter)
 	
 process = requests.get(tjurl + processo_path)
 outfile = 'movimentacao-' + now() + n_processo + '.html'
