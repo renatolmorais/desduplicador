@@ -23,15 +23,20 @@ def change(img,th=10):
 	return img2
 
 tjreq = requests.Session()
-tjresp = tjreq.get(tjurl + search_path)
+
+tjresp1 = tjreq.get(tjurl + search_path)
+tjresp2 = tjreq.get(tjurl + processo_path)
 #print tjresp.text
 
-html_page = bs.BeautifulSoup(tjresp.text.encode('latin1'))
+html_page1 = bs.BeautifulSoup(tjresp1.text.encode('latin1'))
+html_page2 = bs.BeautifulSoup(tjresp2.text.encode('latin1'))
 counter = 1
-while not html_page.find(text=n_processo):
+while not html_page1.find(text=n_processo) or not html_page2.find(text=n_processo):
 	counter += 1
-	tjresp = tjreq.get(tjurl + search_path)
-	html_page = bs.BeautifulSoup(tjresp.text.encode('latin1'))
+	tjresp1 = tjreq.get(tjurl + search_path)
+	tjresp2 = tjreq.get(tjurl + processo_path)
+	html_page1 = bs.BeautifulSoup(tjresp1.text.encode('latin1'))
+	html_page2 = bs.BeautifulSoup(tjresp2.text.encode('latin1'))
 	#process = html_page.find(text=n_processo)
 	#with open(process + '.html','w') as fp: fp.write( tjresp.text.encode('latin1'))
 	
